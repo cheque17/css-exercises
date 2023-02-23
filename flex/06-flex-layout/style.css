@@ -5,6 +5,9 @@ body {
   margin: 0;
   overflow: hidden;
   font-family: Roboto, sans-serif;
+  /* It wasn't obvious at the beginning that I needed to turn the body into a flex container since the divs where being displayed in the right direction, but in order to make the footer stay at the bottom I had to make the .content fill the page, in order to do so I needed the body to allow said class to grow*/
+  display: flex;
+  flex-direction: column;
 }
 
 img {
@@ -25,3 +28,47 @@ input {
   width: 400px;
   margin-bottom: 16px;
 }
+/*MY CODE*/
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header, 
+.footer,
+.left-links,
+.right-links {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 0;
+}
+
+.header,
+.footer {
+  padding: 0 15px;
+
+} /*I added thid CSS after the previous one so the padding here would be applied to both header and footer, if I had done it before, it wouldn't have been applied because the padding was set to 0 in the previous CSS. An alternative would have been to declare the padding of .left-links and .right-links in another declaration*/
+
+.footer {
+  background-color: #eeeeee;
+  margin-top: 15px;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttons button{
+  padding: 6px;
+  margin-right: 3px;
+}
+
+
